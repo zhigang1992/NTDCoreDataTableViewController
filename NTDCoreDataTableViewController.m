@@ -14,14 +14,12 @@
 
 @implementation NTDCoreDataTableViewController
 
+#pragma mark - Incomplete Method Implementation
+
+
 - (NSString *)cellIdentifier
 {
     return nil;
-}
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
-{
-
 }
 
 - (NSFetchedResultsController *)newFetchedResultsController
@@ -29,7 +27,53 @@
     return nil;
 }
 
-#pragma mark - NSFetchedResultsController Delegate
+- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+#pragma mark - Table View Data Source
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSParameterAssert([indexPath section] == 0);
+    NSParameterAssert([indexPath row] < [self tableView:self.tableView numberOfRowsInSection:[indexPath section]]);
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier] forIndexPath:indexPath];
+    
+    // Configure the cell...
+    [self configureCell:cell atIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return [[self.fetchedResultsController sections] count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger numberOfRows = 0;
+    
+    if ([[self.fetchedResultsController sections] count] > 0) {
+        id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
+        numberOfRows = [sectionInfo numberOfObjects];
+    }
+    
+    return numberOfRows;
+}
+
+#pragma mark - NSFetchedResultsController and Delegate
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController == nil) {
+        _fetchedResultsController = [self newFetchedResultsController];
+    }
+	
+	return _fetchedResultsController;
+}
+
 // Copied from NSFetchedResultsControllerDelegate Protocol Reference
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
