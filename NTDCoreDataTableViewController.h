@@ -10,8 +10,9 @@
 
 @interface NTDCoreDataTableViewController : UITableViewController
 
-#pragma mark - Abstract Properties and Methods
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+
+#pragma mark - Abstract Methods
 
 // Returns identifier for UITableViewCell.
 - (NSString *)cellIdentifier;
