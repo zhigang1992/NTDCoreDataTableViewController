@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NTDCoreDataTableViewController : UITableViewController
+@interface NTDCoreDataTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
