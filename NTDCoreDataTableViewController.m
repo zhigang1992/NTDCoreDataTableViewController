@@ -36,8 +36,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSParameterAssert([indexPath section] == 0);
     NSParameterAssert([indexPath row] < [self tableView:self.tableView numberOfRowsInSection:[indexPath section]]);
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier] forIndexPath:indexPath];
     
     // Configure the cell...
