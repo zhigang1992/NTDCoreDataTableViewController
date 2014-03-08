@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NTDCoreDataTableViewController"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Eliminates boilerplate code involved with a CoreData based UITableViewController which uses a NSFetchedResultsController as its data source."
 
   s.description  = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author             = { "NicholasTD07" => "Nicholas.TD07@gmail.com" }
   s.platform     = :ios
-  s.source       = { :git => "https://github.com/NicholasTD07/NTDCoreDataTableViewController.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/NicholasTD07/NTDCoreDataTableViewController.git", :tag => "0.0.3" }
   s.source_files  = 'NTDCoreDataTableViewController/*.{h,m}'
   s.frameworks = 'CoreData', 'UIKit'
 end
