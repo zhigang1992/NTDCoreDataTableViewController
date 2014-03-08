@@ -31,6 +31,15 @@
     
 }
 
+#pragma mark - View Controller - Life Cycle
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    self.fetchedResultsController = nil;
+    
+    [super viewWillDisappear:animated];
+}
+
 #pragma mark - Table View Data Source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
