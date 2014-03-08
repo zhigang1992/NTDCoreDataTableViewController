@@ -53,6 +53,9 @@
 		75BD239118CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NTDCoreDataTableViewControllerTests-Info.plist"; sourceTree = "<group>"; };
 		75BD239318CB0E2F005DD592 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75BD239518CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTDCoreDataTableViewControllerTests.m; sourceTree = "<group>"; };
+		75BD239F18CB1056005DD592 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		75BD23A018CB1056005DD592 /* NTDCoreDataTableViewController.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = NTDCoreDataTableViewController.podspec; sourceTree = "<group>"; };
+		75BD23A118CB1056005DD592 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,9 @@
 		75BD236D18CB0E2F005DD592 = {
 			isa = PBXGroup;
 			children = (
+				75BD239F18CB1056005DD592 /* LICENSE */,
+				75BD23A018CB1056005DD592 /* NTDCoreDataTableViewController.podspec */,
+				75BD23A118CB1056005DD592 /* README.md */,
 				75BD237B18CB0E2F005DD592 /* NTDCoreDataTableViewController */,
 				75BD238F18CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests */,
 				75BD237818CB0E2F005DD592 /* Frameworks */,
@@ -409,6 +415,7 @@
 				75BD239B18CB0E2F005DD592 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75BD239C18CB0E2F005DD592 /* Build configuration list for PBXNativeTarget "NTDCoreDataTableViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +424,7 @@
 				75BD239E18CB0E2F005DD592 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
