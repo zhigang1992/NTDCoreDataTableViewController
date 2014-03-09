@@ -11,6 +11,7 @@
 
     // Collaborators
 #import "NTDFakeFetchedResultsController.h"
+#import "NTDFakeTableView.h"
 
     // Test Support
 #import <XCTest/XCTest.h>
@@ -49,10 +50,12 @@
 
 - (void)testTableViewsReloadDataIsCalledWhenSutsPerformFetchIsCalled
 {
+    // given
+    sut.tableView = [[NTDFakeTableView alloc] init];
     // when
     [sut performFetch];
     // then
-    XCTAssertTrue(sut.tableView.reloadDataIsCalled);
+    XCTAssertTrue([(NTDFakeTableView *)sut.tableView reloadDataIsCalled]);
 }
 
 @end

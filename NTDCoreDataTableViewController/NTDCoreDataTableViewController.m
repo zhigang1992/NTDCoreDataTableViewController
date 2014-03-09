@@ -38,6 +38,7 @@
     if (self.fetchedResultsController) {
         [self.fetchedResultsController performFetch:nil];
     }
+    [self.tableView reloadData];
 }
 
 #pragma mark - View Controller - Life Cycle
