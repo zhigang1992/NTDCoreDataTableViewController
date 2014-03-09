@@ -84,4 +84,14 @@
     XCTAssertTrue([(NTDFakeCDTVC *)sut loggedError]);
 }
 
+- (void)testSutsPerformFetchIsCalledAfterCreatingNewFrc
+{
+    // given
+    sut = [[NTDFakeCDTVC alloc] init];
+    // when
+    [sut fetchedResultsController];
+    // then
+    XCTAssertTrue([(NTDFakeCDTVC *)sut performFetchIsCalled]);;
+}
+
 @end

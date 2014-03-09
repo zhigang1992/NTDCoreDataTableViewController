@@ -12,5 +12,6 @@
 
 @property (nonatomic) BOOL loggedFailure;
 @property (nonatomic) BOOL loggedError;
+@property (nonatomic) BOOL performFetchIsCalled;
 
 @end
