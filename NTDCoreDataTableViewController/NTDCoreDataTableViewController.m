@@ -101,7 +101,7 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController == nil) {
+    if (_fetchedResultsController) {
         _fetchedResultsController = [self newFetchedResultsController];
     }
 	
