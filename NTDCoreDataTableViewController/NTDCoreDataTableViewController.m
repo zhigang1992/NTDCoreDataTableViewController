@@ -31,6 +31,15 @@
     
 }
 
+#pragma mark - Helper Methods
+
+- (void)performFetch
+{
+    if (self.fetchedResultsController) {
+        [self.fetchedResultsController performFetch:nil];
+    }
+}
+
 #pragma mark - View Controller - Life Cycle
 
 - (void)viewWillDisappear:(BOOL)animated

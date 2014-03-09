@@ -12,6 +12,10 @@
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
+#pragma mark - Helper Methods
+
+- (void)performFetch;
+
 #pragma mark - Abstract Methods
 
 // Returns identifier for UITableViewCell.

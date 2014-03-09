@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7546396E18CC194600D43163 /* NTDFakeFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7546396D18CC194600D43163 /* NTDFakeFetchedResultsController.m */; };
 		75BD237A18CB0E2F005DD592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BD237918CB0E2F005DD592 /* Foundation.framework */; };
 		75BD237F18CB0E2F005DD592 /* NTDCoreDataTableViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 75BD237E18CB0E2F005DD592 /* NTDCoreDataTableViewController.h */; };
 		75BD238118CB0E2F005DD592 /* NTDCoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75BD238018CB0E2F005DD592 /* NTDCoreDataTableViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7546396C18CC194600D43163 /* NTDFakeFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTDFakeFetchedResultsController.h; sourceTree = "<group>"; };
+		7546396D18CC194600D43163 /* NTDFakeFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTDFakeFetchedResultsController.m; sourceTree = "<group>"; };
 		75BD237618CB0E2F005DD592 /* libNTDCoreDataTableViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNTDCoreDataTableViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		75BD237918CB0E2F005DD592 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		75BD237D18CB0E2F005DD592 /* NTDCoreDataTableViewController-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NTDCoreDataTableViewController-Prefix.pch"; sourceTree = "<group>"; };
@@ -134,6 +137,8 @@
 		75BD238F18CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests */ = {
 			isa = PBXGroup;
 			children = (
+				7546396C18CC194600D43163 /* NTDFakeFetchedResultsController.h */,
+				7546396D18CC194600D43163 /* NTDFakeFetchedResultsController.m */,
 				75BD239518CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests.m */,
 				75BD239018CB0E2F005DD592 /* Supporting Files */,
 			);
@@ -238,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7546396E18CC194600D43163 /* NTDFakeFetchedResultsController.m in Sources */,
 				75BD239618CB0E2F005DD592 /* NTDCoreDataTableViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

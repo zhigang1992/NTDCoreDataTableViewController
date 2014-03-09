@@ -6,7 +6,13 @@
 //  Copyright (c) 2014 Nicholas Tian. All rights reserved.
 //
 
+    // Class Under Test
 #import "NTDCoreDataTableViewController.h"
+
+    // Collaborators
+#import "NTDFakeFetchedResultsController.h"
+
+    // Test Support
 #import <XCTest/XCTest.h>
 
 @interface NTDCoreDataTableViewControllerTests : XCTestCase
@@ -22,6 +28,7 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    sut = [[NTDCoreDataTableViewController alloc] init];
 }
 
 - (void)tearDown
@@ -33,11 +40,11 @@
 - (void)testIfFRCIsNotNilThenFRCsPerformFetchIsCalledWhenSutsPerformFetchIsCalled
 {
     // given
-    sut.fetchedResultsController = [[NSFetchedResultsController alloc] init];
+    sut.fetchedResultsController = [[NTDFakeFetchedResultsController alloc] init];
     // when
     [sut performFetch];
     // then
-    XCTAssertTrue(sut.fetchedResultsController.performFetchIsCalled);
+    XCTAssertTrue([(NTDFakeFetchedResultsController *)(sut.fetchedResultsController) performFetchIsCalled]);
 }
 
 @end
