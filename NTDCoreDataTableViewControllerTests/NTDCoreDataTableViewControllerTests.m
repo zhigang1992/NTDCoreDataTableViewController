@@ -47,4 +47,12 @@
     XCTAssertTrue([(NTDFakeFetchedResultsController *)(sut.fetchedResultsController) performFetchIsCalled]);
 }
 
+- (void)testTableViewsReloadDataIsCalledWhenSutsPerformFetchIsCalled
+{
+    // when
+    [sut performFetch];
+    // then
+    XCTAssertTrue(sut.tableView.reloadDataIsCalled);
+}
+
 @end
