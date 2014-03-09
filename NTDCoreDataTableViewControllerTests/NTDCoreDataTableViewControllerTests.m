@@ -59,7 +59,7 @@
     XCTAssertTrue([(NTDFakeTableView *)sut.tableView reloadDataIsCalled]);
 }
 
-- (void)testLogIfFRCsFetchFailed
+- (void)testSutWillLogFailureIfFRCsFetchFailed
 {
     // given
     sut = [[NTDFakeCDTVC alloc] init];
