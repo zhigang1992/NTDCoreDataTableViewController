@@ -11,5 +11,6 @@
 @interface NTDFakeCDTVC : NTDCoreDataTableViewController
 
 @property (nonatomic) BOOL loggedFailure;
+@property (nonatomic) BOOL loggedError;
 
 @end

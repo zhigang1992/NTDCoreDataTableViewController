@@ -72,4 +72,16 @@
     XCTAssertTrue([(NTDFakeCDTVC *)sut loggedFailure]);
 }
 
+- (void)testSutWillLogErrorInFRCsFetch
+{
+    sut = [[NTDFakeCDTVC alloc] init];
+    sut.fetchedResultsController = [[NTDFakeFetchedResultsController alloc] init];
+    
+    [(NTDFakeFetchedResultsController *)sut.fetchedResultsController setFetchWillHaveError:YES];
+    // when
+    [sut performFetch];
+    // then
+    XCTAssertTrue([(NTDFakeCDTVC *)sut loggedError]);
+}
+
 @end
