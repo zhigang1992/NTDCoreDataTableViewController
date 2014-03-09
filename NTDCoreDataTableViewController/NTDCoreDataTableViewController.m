@@ -15,7 +15,6 @@
 
 #pragma mark - Incomplete Method Implementation
 
-
 - (NSString *)cellIdentifier
 {
     return nil;
@@ -101,10 +100,9 @@
 
 - (NSFetchedResultsController *)fetchedResultsController
 {
-    if (_fetchedResultsController) {
+    if (!_fetchedResultsController) {
         _fetchedResultsController = [self newFetchedResultsController];
     }
-	
 	return _fetchedResultsController;
 }
 
