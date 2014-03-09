@@ -10,6 +10,7 @@
 
 @interface NTDFakeFetchedResultsController ()
 @property (nonatomic) BOOL fakePerformFetchsReturnValue;
+@property (nonatomic, strong) NSError *error;
 @end
 
 @implementation NTDFakeFetchedResultsController
@@ -29,6 +30,12 @@
 {
     _fetchWillSucceed = fetchWillSucceed;
     self.fakePerformFetchsReturnValue = YES;
+}
+
+- (void)setFetchWillHaveError:(BOOL)fetchWillHaveError
+{
+    _fetchWillHaveError = fetchWillHaveError;
+    self.error = [[NSError alloc] init];
 }
 
 @end

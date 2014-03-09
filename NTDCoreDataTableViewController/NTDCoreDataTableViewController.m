@@ -35,10 +35,12 @@
 
 - (void)performFetch
 {
+    NSError *error;
     if (self.fetchedResultsController) {
-        if (![self.fetchedResultsController performFetch:nil]) {
+        if (![self.fetchedResultsController performFetch:&error]) {
             [self logFetchFailure];
         }
+        [self logError:error];
     }
     [self.tableView reloadData];
 }
@@ -46,6 +48,13 @@
 - (void)logFetchFailure
 {
     NSLog(@"[%@ %@] performFetch: failed", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
+}
+
+- (void)logError:(NSError *)error
+{
+    if (error) {
+        NSLog(@"[%@ %@] %@ (%@)", NSStringFromClass([self class]), NSStringFromSelector(_cmd), [error localizedDescription], [error localizedFailureReason]);
+    }
 }
 
 #pragma mark - View Controller - Life Cycle

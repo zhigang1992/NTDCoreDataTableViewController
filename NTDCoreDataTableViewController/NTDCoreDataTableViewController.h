@@ -16,6 +16,7 @@
 
 - (void)performFetch;
 - (void)logFetchFailure;
+- (void)logError:(NSError *)error;
 
 #pragma mark - Abstract Methods
 

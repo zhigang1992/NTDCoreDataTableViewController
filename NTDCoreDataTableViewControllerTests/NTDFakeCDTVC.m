@@ -21,4 +21,11 @@
     self.loggedFailure = YES;
 }
 
+- (void)logError:(NSError *)error
+{
+    [super logError:error];
+    
+    self.loggedError = YES;
+}
+
 @end
