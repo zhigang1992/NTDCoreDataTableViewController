@@ -41,6 +41,11 @@
     [self.tableView reloadData];
 }
 
+- (void)logFetchFailure
+{
+    
+}
+
 #pragma mark - View Controller - Life Cycle
 
 - (void)viewWillDisappear:(BOOL)animated

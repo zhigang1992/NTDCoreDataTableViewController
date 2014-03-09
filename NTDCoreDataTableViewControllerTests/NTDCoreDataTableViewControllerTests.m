@@ -10,6 +10,7 @@
 #import "NTDCoreDataTableViewController.h"
 
     // Collaborators
+#import "NTDFakeCDTVC.h"
 #import "NTDFakeFetchedResultsController.h"
 #import "NTDFakeTableView.h"
 
@@ -56,6 +57,18 @@
     [sut performFetch];
     // then
     XCTAssertTrue([(NTDFakeTableView *)sut.tableView reloadDataIsCalled]);
+}
+
+- (void)testLogIfFRCsFetchFailed
+{
+    // given
+    sut = [[NTDFakeCDTVC alloc] init];
+    sut.fetchedResultsController = [[NTDFakeFetchedResultsController alloc] init];
+    // when
+    [(NTDFakeCDTVC *)sut setFetchWillFail:NO];
+    [sut performFetch];
+    // then
+    XCTAssertTrue([(NTDFakeCDTVC *)sut loggedFailure]);
 }
 
 @end

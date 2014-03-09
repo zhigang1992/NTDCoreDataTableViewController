@@ -15,6 +15,7 @@
 #pragma mark - Helper Methods
 
 - (void)performFetch;
+- (void)logFetchFailure;
 
 #pragma mark - Abstract Methods
 
