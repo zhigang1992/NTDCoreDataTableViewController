@@ -64,8 +64,9 @@
     // given
     sut = [[NTDFakeCDTVC alloc] init];
     sut.fetchedResultsController = [[NTDFakeFetchedResultsController alloc] init];
+
+    [(NTDFakeFetchedResultsController *)sut.fetchedResultsController setFetchWillSucceed:NO];
     // when
-    [(NTDFakeCDTVC *)sut setFetchWillFail:NO];
     [sut performFetch];
     // then
     XCTAssertTrue([(NTDFakeCDTVC *)sut loggedFailure]);

@@ -10,7 +10,6 @@
 
 @interface NTDFakeCDTVC : NTDCoreDataTableViewController
 
-@property (nonatomic) BOOL fetchWillFail;
 @property (nonatomic) BOOL loggedFailure;
 
 @end

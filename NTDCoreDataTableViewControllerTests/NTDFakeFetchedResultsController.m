@@ -8,12 +8,27 @@
 
 #import "NTDFakeFetchedResultsController.h"
 
+@interface NTDFakeFetchedResultsController ()
+@property (nonatomic) BOOL fakePerformFetchsReturnValue;
+@end
+
 @implementation NTDFakeFetchedResultsController
 
 - (BOOL)performFetch:(NSError *__autoreleasing *)error
 {
     self.performFetchIsCalled = YES;
-    return [super performFetch:error];
+    
+    if (self.fakePerformFetchsReturnValue) {
+        return self.fetchWillSucceed;
+    } else {
+        return [super performFetch:error];
+    }
+}
+
+- (void)setFetchWillSucceed:(BOOL)fetchWillSucceed
+{
+    _fetchWillSucceed = fetchWillSucceed;
+    self.fakePerformFetchsReturnValue = YES;
 }
 
 @end

@@ -36,14 +36,16 @@
 - (void)performFetch
 {
     if (self.fetchedResultsController) {
-        [self.fetchedResultsController performFetch:nil];
+        if (![self.fetchedResultsController performFetch:nil]) {
+            [self logFetchFailure];
+        }
     }
     [self.tableView reloadData];
 }
 
 - (void)logFetchFailure
 {
-    
+    NSLog(@"[%@ %@] performFetch: failed", NSStringFromClass([self class]), NSStringFromSelector(_cmd));
 }
 
 #pragma mark - View Controller - Life Cycle

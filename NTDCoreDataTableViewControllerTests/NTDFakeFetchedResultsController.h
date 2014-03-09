@@ -10,6 +10,7 @@
 
 @interface NTDFakeFetchedResultsController : NSFetchedResultsController
 
+@property (nonatomic) BOOL fetchWillSucceed;
 @property (nonatomic) BOOL performFetchIsCalled;
 
 @end
