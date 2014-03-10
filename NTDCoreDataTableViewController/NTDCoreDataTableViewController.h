@@ -14,6 +14,8 @@
 
 #pragma mark - Helper Methods
 
+// 1. Calls self.fetchedResultsController's performFetch.
+// 2. Calls self.tableView's reloadData.
 - (void)performFetch;
 - (void)logFetchFailure;
 - (void)logError:(NSError *)error;
