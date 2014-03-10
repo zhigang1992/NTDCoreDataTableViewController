@@ -12,5 +12,6 @@ Pod::Spec.new do |s|
                    DESC
   s.source_files  = 'NTDCoreDataTableViewController/*.{h,m}'
   s.frameworks = 'CoreData', 'UIKit'
+  s.requires_arc = true
   s.platform     = :ios
 end
