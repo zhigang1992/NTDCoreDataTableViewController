@@ -27,7 +27,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    
+
 }
 
 #pragma mark - Helper Methods
@@ -61,7 +61,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     self.fetchedResultsController = nil;
-    
+
     [super viewWillDisappear:animated];
 }
 
@@ -70,12 +70,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSParameterAssert(indexPath.row < [self tableView:self.tableView numberOfRowsInSection:indexPath.section]);
-    
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[self cellIdentifier] forIndexPath:indexPath];
-    
+
     // Configure the cell...
     [self configureCell:cell atIndexPath:indexPath];
-    
+
     return cell;
 }
 
@@ -87,12 +87,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSInteger numberOfRows = 0;
-    
+
     if ([[self.fetchedResultsController sections] count] > 0) {
         id <NSFetchedResultsSectionInfo> sectionInfo = [[self.fetchedResultsController sections] objectAtIndex:section];
         numberOfRows = [sectionInfo numberOfObjects];
     }
-    
+
     return numberOfRows;
 }
 
@@ -102,6 +102,7 @@
 {
     if (!_fetchedResultsController) {
         _fetchedResultsController = [self newFetchedResultsController];
+        _fetchedResultsController.delegate = self;
     }
 	return _fetchedResultsController;
 }
@@ -115,13 +116,13 @@
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    
+
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                           withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+
         case NSFetchedResultsChangeDelete:
             [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
                           withRowAnimation:UITableViewRowAnimationFade];
@@ -133,26 +134,26 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
-    
+
     UITableView *tableView = self.tableView;
-    
+
     switch(type) {
-            
+
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+
         case NSFetchedResultsChangeDelete:
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath]
                     atIndexPath:indexPath];
             break;
-            
+
         case NSFetchedResultsChangeMove:
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
                              withRowAnimation:UITableViewRowAnimationFade];
